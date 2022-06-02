@@ -26,7 +26,7 @@ namespace FerreteriaApi.Services.TokenGenerators
             List<Claim> claims = new List<Claim>() 
             { 
                 new Claim(ClaimTypes.NameIdentifier, responseAuthentication.Username),
-                new Claim(ClaimTypes.Role, responseAuthentication.IdRol),
+                new Claim(ClaimTypes.Role, responseAuthentication.RolId),
                 //new Claim(ClaimTypes.Email, responseAuthentication.Email),
             };
 

@@ -15,9 +15,9 @@ namespace FerreteriaApi.Models
         public string Name { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
-        public int IdCategory { get; set; }
+        public int CategoryId { get; set; }
 
-        public virtual SupplierCat IdCategoryNavigation { get; set; }
+        public virtual SupplierCat Category { get; set; }
         public virtual ICollection<Buy> Buys { get; set; }
     }
 }

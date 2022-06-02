@@ -14,7 +14,7 @@ namespace FerreteriaApi.DTOs.user_sys
     {
         public string UserName { get; set; }
         public string Email { get; set; }
-        public int IdRol { get; set; }
+        public int RolId { get; set; }
     }
 
    

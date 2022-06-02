@@ -7,6 +7,7 @@ namespace FerreteriaApi.Models
     {
         public Product()
         {
+            BuyDets = new HashSet<BuyDet>();
             MinMaxProds = new HashSet<MinMaxProd>();
         }
 
@@ -16,13 +17,14 @@ namespace FerreteriaApi.Models
         public string Description { get; set; }
         public decimal? BuyPrice { get; set; }
         public int? Stock { get; set; }
-        public int? IdCategory { get; set; }
-        public byte? IdStatus { get; set; }
-        public int? IdMeasure { get; set; }
+        public int? CategoryId { get; set; }
+        public byte? StatusId { get; set; }
+        public int? MeasureId { get; set; }
 
-        public virtual ProductCat IdCategoryNavigation { get; set; }
-        public virtual Measure IdMeasureNavigation { get; set; }
-        public virtual ProductStum IdStatusNavigation { get; set; }
+        public virtual ProductCat Category { get; set; }
+        public virtual Measure Measure { get; set; }
+        public virtual ProductStum Status { get; set; }
+        public virtual ICollection<BuyDet> BuyDets { get; set; }
         public virtual ICollection<MinMaxProd> MinMaxProds { get; set; }
     }
 }

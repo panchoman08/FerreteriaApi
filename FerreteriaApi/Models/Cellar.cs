@@ -7,6 +7,8 @@ namespace FerreteriaApi.Models
     {
         public Cellar()
         {
+            CellarTransferCellarDestinations = new HashSet<CellarTransfer>();
+            CellarTransferCellarOrigins = new HashSet<CellarTransfer>();
             MinMaxProds = new HashSet<MinMaxProd>();
         }
 
@@ -14,6 +16,8 @@ namespace FerreteriaApi.Models
         public string Name { get; set; }
         public string Address { get; set; }
 
+        public virtual ICollection<CellarTransfer> CellarTransferCellarDestinations { get; set; }
+        public virtual ICollection<CellarTransfer> CellarTransferCellarOrigins { get; set; }
         public virtual ICollection<MinMaxProd> MinMaxProds { get; set; }
     }
 }

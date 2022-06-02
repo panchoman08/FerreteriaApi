@@ -10,9 +10,9 @@ namespace FerreteriaApi.DTOs.product
         public string Description { get; set; }
         public decimal? BuyPrice { get; set; }
         public int? Stock { get; set; }
-        public int? IdCategory { get; set; }
-        public byte? IdStatus { get; set; }
-        public int? IdMeasure { get; set; }
+        public int? CategoryId { get; set; }
+        public byte? StatusId { get; set; }
+        public int? MeasureId { get; set; }
     }
 
     public class ProductUpdateDTO
@@ -22,8 +22,8 @@ namespace FerreteriaApi.DTOs.product
         public string Description { get; set; }
         public decimal? BuyPrice { get; set; }
         public int? Stock { get; set; }
-        public int? IdCategory { get; set; }
-        public byte? IdStatus { get; set; }
-        public int? IdMeasure { get; set; }
+        public int? CategoryId { get; set; }
+        public byte? StatusId { get; set; }
+        public int? MeasureId { get; set; }
     }
 }

@@ -30,6 +30,13 @@ namespace FerreteriaApi.Controllers
                     return BadRequest(new ErrorResponse("Password don't match wit ConfirmPassword"));
                 }
 
+                var userAlreadyRegister = await _authenticateRepository.GetByUsername(userRegister.UserName);
+
+                if (userAlreadyRegister != null)
+                {
+                    return BadRequest(new ErrorResponse("This username is already registered."));
+                }
+
                 await _authenticateRepository.Create(userRegister);
 
                 return Ok();

@@ -16,13 +16,13 @@ namespace FerreteriaApi.DTOs.product
         public int? Stock { get; set; }
 
         [Required(ErrorMessage = "{0} must not be empty.")]
-        public int? IdCategory { get; set; }
+        public int? CategoryId { get; set; }
 
         [Required(ErrorMessage = "{0} must not be empty.")]
-        public byte? IdStatus { get; set; }
+        public byte? StatusId { get; set; }
 
         [Required(ErrorMessage = "{0} must not be empty.")]
-        public int? IdMeasure { get; set; }
+        public int? MeasureId { get; set; }
 
     }
 }

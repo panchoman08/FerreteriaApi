@@ -1,10 +1,20 @@
 ﻿using FerreteriaApi.Models;
 using FerreteriaApi.Repository.AuthenticateRepositories;
+using FerreteriaApi.Repository.BuyDetailRepositories;
+using FerreteriaApi.Repository.BuyRepositories;
+using FerreteriaApi.Repository.CellarRepositories;
+using FerreteriaApi.Repository.CellarTransferDetRepositories;
+using FerreteriaApi.Repository.CellarTransferRepositories;
+using FerreteriaApi.Repository.CustomerCatRepositories;
+using FerreteriaApi.Repository.CustomerRepositories;
+using FerreteriaApi.Repository.InventoryRepositories;
 using FerreteriaApi.Repository.ProductCatRepositories;
 using FerreteriaApi.Repository.ProductMeasureRepositories;
 using FerreteriaApi.Repository.ProductRepositories;
 using FerreteriaApi.Repository.ProductStatusRepositories;
 using FerreteriaApi.Repository.SupplierCatRepositories;
+using FerreteriaApi.Repository.SupplierRepositories;
+using FerreteriaApi.Repository.TransactionStatusRepositories;
 using FerreteriaApi.Services.TokenGenerators;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -65,6 +75,16 @@ namespace FerreteriaApi
             services.AddTransient<IProductStatusRepository, ProductStatusRepository>();
             services.AddTransient<IProductMeasureRepository, ProductMeasureRepository>();
             services.AddTransient<ISupplierCatRepository, SupplierCatRepository>();
+            services.AddTransient<ISupplierRepository, SupplierRepository>();
+            services.AddTransient<ICustomerCatRepository, CustomerCatRepository>();
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<IBuyRepository, BuyRepository>();
+            services.AddTransient<IBuyDetailRepository, BuyDetailRepository>();
+            services.AddTransient<ITransactionStatusRepository, TransactionStatusRepository>();
+            services.AddTransient<ICellarRepository, CellarRepository>();
+            services.AddTransient<ICellarTransferRepository, CellarTransferRepository>();
+            services.AddTransient<ICellarTransferDetRepository, CellarTransferDetRepository>();
+            services.AddTransient<IInventoryRepository, InventoryRepository>();
             services.AddTransient<Repository.AuthenticateRepositories.IAuthenticateRepository, AuthenticateRepository>();
 
 

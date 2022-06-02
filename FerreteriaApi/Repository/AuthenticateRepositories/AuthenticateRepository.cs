@@ -3,6 +3,7 @@ using FerreteriaApi.DTOs;
 using FerreteriaApi.DTOs.user_sys;
 using FerreteriaApi.Models;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace FerreteriaApi.Repository.AuthenticateRepositories
 {
@@ -17,9 +18,12 @@ namespace FerreteriaApi.Repository.AuthenticateRepositories
             this._mapper = mapper;
         }
 
-        public Task Create(UserRegister userRegister)
+        public async Task Create(UserRegister userRegister)
         {
-            throw new NotImplementedException();
+            var user = _mapper.Map<UserSy>(userRegister);
+            _context.Add(user);
+            await _context.SaveChangesAsync();
+
         }
 
         public async Task<ResponseAuthentication> GetByUsername(string username)

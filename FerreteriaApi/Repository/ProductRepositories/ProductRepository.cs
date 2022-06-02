@@ -61,9 +61,9 @@ namespace FerreteriaApi.Repository.ProductRepositories
             productToUpdate.Description = string.IsNullOrEmpty(productDTO.Description) ? productToUpdate.Description : productDTO.Description;
             productToUpdate.BuyPrice = string.IsNullOrEmpty(productDTO.BuyPrice.ToString()) ? productToUpdate.BuyPrice : productDTO.BuyPrice;
             productToUpdate.Stock = string.IsNullOrEmpty(productDTO.Stock.ToString()) ? productToUpdate.Stock : productDTO.Stock;
-            productToUpdate.IdCategory = string.IsNullOrEmpty(productDTO.IdCategory.ToString()) ? productToUpdate.IdCategory : productDTO.IdCategory;
-            productToUpdate.IdMeasure = string.IsNullOrEmpty(productDTO.IdMeasure.ToString()) ? productToUpdate.IdMeasure : productDTO.IdMeasure;
-            productToUpdate.IdStatus = string.IsNullOrEmpty(productDTO.IdStatus.ToString()) ? productToUpdate.IdStatus : productDTO.IdStatus;
+            productToUpdate.CategoryId = string.IsNullOrEmpty(productDTO.CategoryId.ToString()) ? productToUpdate.CategoryId : productDTO.CategoryId;
+            productToUpdate.MeasureId = string.IsNullOrEmpty(productDTO.MeasureId.ToString()) ? productToUpdate.MeasureId : productDTO.MeasureId;
+            productToUpdate.StatusId = string.IsNullOrEmpty(productDTO.StatusId.ToString()) ? productToUpdate.StatusId : productDTO.StatusId;
 
             await _context.SaveChangesAsync();
         }

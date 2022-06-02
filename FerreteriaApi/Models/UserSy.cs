@@ -14,10 +14,10 @@ namespace FerreteriaApi.Models
         public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public int? IdRol { get; set; }
+        public int? RolId { get; set; }
         public string Email { get; set; }
 
-        public virtual RolUser IdRolNavigation { get; set; }
+        public virtual RolUser Rol { get; set; }
         public virtual ICollection<Buy> Buys { get; set; }
         public virtual ICollection<Sale> Sales { get; set; }
     }

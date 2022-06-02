@@ -40,7 +40,7 @@ namespace FerreteriaApi.Controllers
                 return new UserModel
                 {
                     UserName = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.NameIdentifier)?.Value,
-                    IdRol = int.Parse(userClaims.FirstOrDefault(o => o.Type == ClaimTypes.Role)?.Value),
+                    RolId = int.Parse(userClaims.FirstOrDefault(o => o.Type == ClaimTypes.Role)?.Value),
 
                 };
             }
@@ -54,7 +54,8 @@ namespace FerreteriaApi.Controllers
         {
             try
             {
-                return await _productRepository.GetAllAsync();
+                var products =  await _productRepository.GetAllAsync();
+                return Ok(products);
             }
             catch (Exception ex)
             {
